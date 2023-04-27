@@ -1,7 +1,17 @@
+using Dev_Email_Management.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Criando a connectionString
+var conectionString = builder.Configuration.GetConnectionString("DataBase");
+
+builder.Services.AddDbContext<Dev_Email_ManagementContext>(options => 
+    options.UseSqlServer(conectionString));
+
 
 var app = builder.Build();
 
