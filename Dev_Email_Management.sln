@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.MVC", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.Domain", "Dev_Email_Management.Domain\Dev_Email_Management.Domain.csproj", "{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.Infrastructure", "Dev_Email_Management.Infrastructure\Dev_Email_Management.Infrastructure.csproj", "{CACDC011-CFC6-45C0-AD92-0192AD153A2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACDC011-CFC6-45C0-AD92-0192AD153A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACDC011-CFC6-45C0-AD92-0192AD153A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACDC011-CFC6-45C0-AD92-0192AD153A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACDC011-CFC6-45C0-AD92-0192AD153A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{059E514B-968E-4697-A858-1B24B8873FA1} = {341FE9F5-66D1-4CE8-B750-8F6E4413F4B6}
 		{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A} = {7141D0F2-B393-4033-82B5-FDB684D6C023}
+		{CACDC011-CFC6-45C0-AD92-0192AD153A2D} = {5FFBB3D5-0AA3-4238-B8F7-00189180919D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D673ACC1-558E-4895-BB77-A6DC324C29C1}
