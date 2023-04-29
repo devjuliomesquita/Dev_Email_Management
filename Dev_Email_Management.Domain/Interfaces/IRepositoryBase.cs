@@ -10,7 +10,7 @@ namespace Dev_Email_Management.Domain.Interfaces
     {
         void Add(TEntity entity);
         TEntity GetById(int id);
-        List<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
         void Update(TEntity entity);
         void Delete(TEntity entity);
         void Dispose();
