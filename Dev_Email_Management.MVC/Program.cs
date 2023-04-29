@@ -1,4 +1,6 @@
+using Dev_Email_Management.Domain.Interfaces;
 using Dev_Email_Management.Infrastructure.Persistence.Context;
+using Dev_Email_Management.Infrastructure.Repositories;
 using Dev_Email_Management.MVC.AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +15,8 @@ var conectionString = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddDbContext<Dev_Email_ManagementContext>(options => 
     options.UseSqlServer(conectionString));
 
-
+//Injeções de Dependência
+builder.Services.AddScoped<IBusinessRepository, BusinessRepository>();
 
 //AutoMapper - todas as confg
 builder.Services.AddAutoMapper(typeof(Email_Management_Mapper));
