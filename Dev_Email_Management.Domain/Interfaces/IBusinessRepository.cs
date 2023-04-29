@@ -9,5 +9,6 @@ namespace Dev_Email_Management.Domain.Interfaces
 {
     public interface IBusinessRepository : IRepositoryBase<Business>
     {
+        IEnumerable<Business> GetByName(string name);
     }
 }

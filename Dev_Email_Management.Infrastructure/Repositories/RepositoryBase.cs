@@ -44,7 +44,7 @@ namespace Dev_Email_Management.Infrastructure.Repositories
         {
             return _dbSet.Find(id);
         }
-
+       
         public void Update(TEntity entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
