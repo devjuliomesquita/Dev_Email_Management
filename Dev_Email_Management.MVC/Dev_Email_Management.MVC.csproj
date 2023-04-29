@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Dev_Email_Management.Infrastructure\Dev_Email_Management.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AutoMapper\" />
-  </ItemGroup>
-
 </Project>

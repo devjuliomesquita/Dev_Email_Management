@@ -11,11 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{5FFBB3D5-0AA3-4238-B8F7-00189180919D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.MVC", "Dev_Email_Management.MVC\Dev_Email_Management.MVC.csproj", "{059E514B-968E-4697-A858-1B24B8873FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev_Email_Management.MVC", "Dev_Email_Management.MVC\Dev_Email_Management.MVC.csproj", "{059E514B-968E-4697-A858-1B24B8873FA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A} = {A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.Domain", "Dev_Email_Management.Domain\Dev_Email_Management.Domain.csproj", "{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev_Email_Management.Domain", "Dev_Email_Management.Domain\Dev_Email_Management.Domain.csproj", "{A5B5AB0D-90ED-46AC-8E2E-3731E851F90A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Email_Management.Infrastructure", "Dev_Email_Management.Infrastructure\Dev_Email_Management.Infrastructure.csproj", "{CACDC011-CFC6-45C0-AD92-0192AD153A2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev_Email_Management.Infrastructure", "Dev_Email_Management.Infrastructure\Dev_Email_Management.Infrastructure.csproj", "{CACDC011-CFC6-45C0-AD92-0192AD153A2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
