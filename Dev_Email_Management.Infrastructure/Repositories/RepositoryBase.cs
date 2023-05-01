@@ -11,49 +11,65 @@ namespace Dev_Email_Management.Infrastructure.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {
-        private readonly Dev_Email_ManagementContext _context;
-        private readonly DbSet<TEntity> _dbSet;
-        public RepositoryBase(Dev_Email_ManagementContext context)
+        private readonly DbContextOptions<Dev_Email_ManagementContext> _context;
+        public RepositoryBase()
         {
-            _context = context;
-            _dbSet = context.Set<TEntity>();
+            _context = new DbContextOptions<Dev_Email_ManagementContext>();
         }
 
-        public RepositoryBase(IBusinessRepository businessRepository)
-        {
-        }
 
         public void Add(TEntity entity)
         {
-            _dbSet.Add(entity);
-            _context.SaveChanges();
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                data.Set<TEntity>().Add(entity);
+                data.SaveChanges();
+            }
+                
         }
 
         public void Delete(TEntity entity)
         {
-            _dbSet.Remove(entity);
-            _context.SaveChanges();
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                data.Set<TEntity>().Remove(entity);
+                data.SaveChanges();
+            }
+                
         }
 
         public void Dispose()
         {
-            _context.Dispose();
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                data.Dispose();
+            }
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return _dbSet.ToList();
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                return data.Set<TEntity>().ToList();
+            }
         }
 
         public TEntity GetById(int id)
         {
-            return _dbSet.Find(id);
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                return data.Set<TEntity>().Find(id);
+            }
         }
        
         public void Update(TEntity entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                data.Entry(entity).State = EntityState.Modified;
+                data.SaveChanges();
+            }
+                
         }
     }
 }

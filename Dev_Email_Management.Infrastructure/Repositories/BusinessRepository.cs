@@ -1,6 +1,7 @@
 ﻿using Dev_Email_Management.Domain.Entities;
 using Dev_Email_Management.Domain.Interfaces.Repositories;
 using Dev_Email_Management.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,19 @@ namespace Dev_Email_Management.Infrastructure.Repositories
 {
     public class BusinessRepository : RepositoryBase<Business>, IBusinessRepository
     {
-        private readonly Dev_Email_ManagementContext _context;
-        public BusinessRepository(Dev_Email_ManagementContext context) : base(context)
+        private readonly DbContextOptions<Dev_Email_ManagementContext> _context;
+        public BusinessRepository()
         {
-            _context = context;
+            _context = new DbContextOptions<Dev_Email_ManagementContext>();
         }
 
         public IEnumerable<Business> GetByName(string name)
         {
-            return _context.Businesses.Where(b => b.BusinessName == name);
+            using (var data = new Dev_Email_ManagementContext(_context))
+            {
+                return data.Businesses.Where(d => d.BusinessName == name);
+            }
+                
         }
     }
 }
