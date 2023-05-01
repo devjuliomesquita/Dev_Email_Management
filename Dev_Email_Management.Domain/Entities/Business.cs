@@ -37,13 +37,17 @@ namespace Dev_Email_Management.Domain.Entities
             BusinessName = businessName;
             BusinessNNI = businessNNI;
         }
-        public void Cancel() 
+        public void Cancel(Business business) 
         {
             if(Active == true)
             {
                 Active = false;
                 CanceledAt = DateTime.Now;
             }
+        }
+        public bool BusinessEspec(Business business)
+        {
+            return business.Active && DateTime.Now.Year - CreatedAt.Year < 1;
         }
     }
 }

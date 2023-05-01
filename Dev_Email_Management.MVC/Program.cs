@@ -1,4 +1,4 @@
-using Dev_Email_Management.Domain.Interfaces;
+using Dev_Email_Management.Domain.Interfaces.Repositories;
 using Dev_Email_Management.Infrastructure.Persistence.Context;
 using Dev_Email_Management.Infrastructure.Repositories;
 using Dev_Email_Management.MVC.AutoMapper;

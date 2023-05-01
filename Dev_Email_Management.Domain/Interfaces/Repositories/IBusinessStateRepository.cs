@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dev_Email_Management.Domain.Interfaces
+namespace Dev_Email_Management.Domain.Interfaces.Repositories
 {
-    public interface IBusinessRepository : IRepositoryBase<Business>
+    public interface IBusinessStateRepository : IRepositoryBase<BusinessState>
     {
-        IEnumerable<Business> GetByName(string name);
     }
 }

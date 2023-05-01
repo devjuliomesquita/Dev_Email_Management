@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dev_Email_Management.Domain.Interfaces
+namespace Dev_Email_Management.Domain.Interfaces.Service
 {
-    public interface IBusinessCityRepository : IRepositoryBase<BusinessCity>
+    public interface IBusinessCityService : IServiceBase<BusinessCity>
     {
     }
 }

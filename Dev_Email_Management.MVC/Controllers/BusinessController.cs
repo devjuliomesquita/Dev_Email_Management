@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Dev_Email_Management.Domain.Entities;
-using Dev_Email_Management.Domain.Interfaces;
+using Dev_Email_Management.Domain.Interfaces.Repositories;
 using Dev_Email_Management.Infrastructure.Repositories;
 using Dev_Email_Management.MVC.DTOs.InputModel;
 using Dev_Email_Management.MVC.DTOs.ViewModel;

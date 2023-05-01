@@ -1,4 +1,4 @@
-﻿using Dev_Email_Management.Domain.Interfaces;
+﻿using Dev_Email_Management.Domain.Interfaces.Repositories;
 using Dev_Email_Management.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,6 +18,11 @@ namespace Dev_Email_Management.Infrastructure.Repositories
             _context = context;
             _dbSet = context.Set<TEntity>();
         }
+
+        public RepositoryBase(IBusinessRepository businessRepository)
+        {
+        }
+
         public void Add(TEntity entity)
         {
             _dbSet.Add(entity);
@@ -32,7 +37,7 @@ namespace Dev_Email_Management.Infrastructure.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
 
         public IEnumerable<TEntity> GetAll()
