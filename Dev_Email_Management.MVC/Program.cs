@@ -1,4 +1,8 @@
+using Dev_Email_Management.Application.Implementatios;
+using Dev_Email_Management.Application.Interfaces;
 using Dev_Email_Management.Domain.Interfaces.Repositories;
+using Dev_Email_Management.Domain.Interfaces.Service;
+using Dev_Email_Management.Domain.Services;
 using Dev_Email_Management.Infrastructure.Persistence.Context;
 using Dev_Email_Management.Infrastructure.Repositories;
 using Dev_Email_Management.MVC.AutoMapper;
@@ -15,9 +19,29 @@ var conectionString = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddDbContext<Dev_Email_ManagementContext>(options => 
     options.UseSqlServer(conectionString));
 
-//Injeções de Dependência
+//Injeções de Dependência - Repositories
+builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 builder.Services.AddScoped<IBusinessRepository, BusinessRepository>();
+builder.Services.AddScoped<IBusinessCityRepository, BusinessCityRepository>();
+builder.Services.AddScoped<IBusinessStateRepository, BusinessStateRepository>();
+builder.Services.AddScoped<IBusinessEmailRepository, BusinessEmailRepository>();
+builder.Services.AddScoped<IBusinessPhoneRepository, BusinessPhoneRepository>();
 
+//Injeções de dependência - Services
+builder.Services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
+builder.Services.AddScoped<IBusinessService, BusinessService>();
+builder.Services.AddScoped<IBusinessCityService, BusinessCityService>();
+builder.Services.AddScoped<IBusinessStateService, BusinessStateService>();
+builder.Services.AddScoped<IBusinessEmailService, BusinessEmailService>();
+builder.Services.AddScoped<IBusinessPhoneService, BusinessPhoneService>();
+
+//Injeções de dependência - AppServices
+builder.Services.AddScoped(typeof(IAppServiceBase<>), typeof(AppServiceBase<>));
+builder.Services.AddScoped<IBusinessAppService, BusinessAppService>();
+builder.Services.AddScoped<IBusinessCityAppService, BusinessCityAppService>();
+builder.Services.AddScoped<IBusinessStateAppService, BusinessStateAppService>();
+builder.Services.AddScoped<IBusinessEmailAppService, BusinessEmailAppService>();
+builder.Services.AddScoped<IBusinessPhoneAppService, BusinessPhoneAppService>();
 //AutoMapper - todas as confg
 builder.Services.AddAutoMapper(typeof(Email_Management_Mapper));
 

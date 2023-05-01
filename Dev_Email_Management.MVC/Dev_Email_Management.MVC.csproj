@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dev_Email_Management.Application\Dev_Email_Management.Application.csproj" />
     <ProjectReference Include="..\Dev_Email_Management.Infrastructure\Dev_Email_Management.Infrastructure.csproj" />
   </ItemGroup>
 

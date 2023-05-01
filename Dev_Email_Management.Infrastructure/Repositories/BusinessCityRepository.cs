@@ -12,10 +12,10 @@ namespace Dev_Email_Management.Infrastructure.Repositories
 {
     public class BusinessCityRepository : RepositoryBase<BusinessCity>, IBusinessCityRepository
     {
-
+        private readonly DbContextOptions<Dev_Email_ManagementContext> _context;
         public BusinessCityRepository()
         {
-            
+            _context = new DbContextOptions<Dev_Email_ManagementContext>();
         }
     }
 }
