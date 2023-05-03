@@ -5,13 +5,12 @@ using Dev_Email_Management.Domain.Interfaces.Service;
 
 namespace Dev_Email_Management.Domain.Services
 {
-    public class BusinessService : ServiceBase<Business>, IBusinessService
+    public class BusinessService : IBusinessService
     {
         private readonly IBusinessService _businessService;
 
         public BusinessService(
-            IRepositoryBase<Business> repository,
-            IBusinessService businessService) : base(repository)
+            IBusinessService businessService)
         {
             _businessService = businessService;
         }

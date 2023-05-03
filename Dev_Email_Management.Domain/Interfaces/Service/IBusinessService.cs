@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dev_Email_Management.Domain.Interfaces.Service
 {
-    public interface IBusinessService : IServiceBase<Business>
+    public interface IBusinessService
     {
         IEnumerable<Business> GetByName(string name);
         IEnumerable<Business> BusinessEspec(IEnumerable<Business> businesses);

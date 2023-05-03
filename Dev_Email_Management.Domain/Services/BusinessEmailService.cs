@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dev_Email_Management.Domain.Services
 {
-    public class BusinessEmailService : ServiceBase<BusinessEmail>, IBusinessEmailService
+    public class BusinessEmailService : IBusinessEmailService
     {
-        public BusinessEmailService(IRepositoryBase<BusinessEmail> repository) : base(repository)
+        private readonly IBusinessEmailService _IbusinessEmailService;
+        public BusinessEmailService(IBusinessEmailService businessEmailService)
         {
+            _IbusinessEmailService = businessEmailService;
         }
     }
 }

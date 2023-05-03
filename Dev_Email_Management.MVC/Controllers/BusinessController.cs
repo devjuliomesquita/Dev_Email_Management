@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using Dev_Email_Management.Application.Interfaces;
+
 using Dev_Email_Management.Domain.Entities;
 using Dev_Email_Management.Domain.Interfaces.Repositories;
+using Dev_Email_Management.Domain.Interfaces.Service;
 using Dev_Email_Management.Infrastructure.Repositories;
 using Dev_Email_Management.MVC.DTOs.InputModel;
 using Dev_Email_Management.MVC.DTOs.ViewModel;
@@ -14,23 +15,26 @@ namespace Dev_Email_Management.MVC.Controllers
     {
         //Criando o construtor
         private readonly IMapper _mapper;
-        private readonly IBusinessAppService _businessAppService;
-        public BusinessController(IMapper mapper, IBusinessAppService businessAppService)
+        private readonly IBusinessRepository _businessRepository;
+        private readonly IBusinessService _businessService;
+        
+        public BusinessController(IMapper mapper, IBusinessRepository businessRepository, IBusinessService businessService)
         {
             _mapper = mapper;
-            _businessAppService = businessAppService;
+            _businessRepository = businessRepository;
+            _businessService = businessService;
         }
         // GET: BusinessController
         public ActionResult Index()
         {
-            var businessViewModel = _mapper.Map<IEnumerable<Business>, IEnumerable<BusinessViewModel>>(_businessAppService.GetAll());
+            var businessViewModel = _mapper.Map<IEnumerable<Business>, IEnumerable<BusinessViewModel>>(_businessRepository.GetAll());
             return View(businessViewModel);
         }
 
         // GET: BusinessController/Details/5
         public ActionResult Details(int id)
         {
-            var business = _businessAppService.GetById(id);
+            var business = _businessRepository.GetById(id);
             var businessViewModel = _mapper.Map<Business, BusinessViewModel>(business);
             return View(businessViewModel);
         }
@@ -50,7 +54,7 @@ namespace Dev_Email_Management.MVC.Controllers
             {
                 if (!ModelState.IsValid) { return View(model); }
                 var businessDomain = _mapper.Map<AddBusinessInputModel, Business>(model);
-                _businessAppService.Add(businessDomain);
+                _businessRepository.Add(businessDomain);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -62,7 +66,7 @@ namespace Dev_Email_Management.MVC.Controllers
         // GET: BusinessController/Edit/5
         public ActionResult Edit(int id)
         {
-            var business = _businessAppService.GetById(id);
+            var business = _businessRepository.GetById(id);
             var businessViewModel = _mapper.Map<Business, BusinessViewModel>(business);
             return View(businessViewModel);
         }
@@ -75,7 +79,7 @@ namespace Dev_Email_Management.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var businessDomain = _mapper.Map<BusinessViewModel, Business>(businessViewModel);
-                _businessAppService.Update(businessDomain);
+                _businessRepository.Update(businessDomain);
             }
             return RedirectToAction(nameof(Index));
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dev_Email_Management.Domain.Interfaces.Service
 {
-    public interface IBusinessStateService : IServiceBase<BusinessState>
+    public interface IBusinessStateService
     {
     }
 }
