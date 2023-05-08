@@ -2,7 +2,7 @@
 {
     public class AddBusinessCityInputModel
     {
-        public string City { get; set; }
+        public string? City { get; set; }
         public int BusinessId { get; set; }
     }
 }

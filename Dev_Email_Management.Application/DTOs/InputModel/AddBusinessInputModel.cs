@@ -2,6 +2,6 @@
 {
     public class AddBusinessInputModel
     {
-        public string BusinessName { get; set; }
+        public string? BusinessName { get; set; }
     }
 }

@@ -3,7 +3,7 @@
     public class BusinessPhoneViewModel
     {
         public int BusinessPhoneId { get; set; }
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         public int BusinessId { get; set; }
     }
 }

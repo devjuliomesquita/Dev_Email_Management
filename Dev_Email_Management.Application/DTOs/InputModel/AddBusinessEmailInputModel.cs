@@ -2,7 +2,7 @@
 {
     public class AddBusinessEmailInputModel
     {
-        public string Email { get; set; }
+        public string? Email { get; set; }
         public int BusinessId { get; set; }
     }
 }

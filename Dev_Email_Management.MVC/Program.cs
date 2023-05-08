@@ -26,11 +26,11 @@ builder.Services.AddScoped<IBusinessEmailRepository, BusinessEmailRepository>();
 builder.Services.AddScoped<IBusinessPhoneRepository, BusinessPhoneRepository>();
 
 //Injeções de dependência - Services
-builder.Services.AddScoped<IBusinessService, BusinessService>();
-builder.Services.AddScoped<IBusinessCityService, BusinessCityService>();
-builder.Services.AddScoped<IBusinessStateService, BusinessStateService>();
-builder.Services.AddScoped<IBusinessEmailService, BusinessEmailService>();
-builder.Services.AddScoped<IBusinessPhoneService, BusinessPhoneService>();
+//builder.Services.AddScoped<IBusinessService, BusinessService>();
+//builder.Services.AddScoped<IBusinessCityService, BusinessCityService>();
+//builder.Services.AddScoped<IBusinessStateService, BusinessStateService>();
+//builder.Services.AddScoped<IBusinessEmailService, BusinessEmailService>();
+//builder.Services.AddScoped<IBusinessPhoneService, BusinessPhoneService>();
 
 //AutoMapper - todas as confg
 builder.Services.AddAutoMapper(typeof(Email_Management_Mapper));

@@ -2,7 +2,7 @@
 {
     public class AddBusinessPhoneInputModel
     {
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         public int BusinessId { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace Dev_Email_Management.MVC.DTOs.ViewModel
     public class BusinessViewModel
     {
         public int BusinessId { get; set; }
-        public string BusinessName { get; set; }
+        public string? BusinessName { get; set; }
         public bool BusinessNNI { get; set; }
         public bool Active { get; set; }
         public DateTime CreatedAt { get; set; }
